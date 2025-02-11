@@ -1,0 +1,37 @@
+# Függőségek
+node_modules/
+
+# Környezeti változók
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build eredmények
+build/
+dist/
+dist-ssr/
+
+# Logok és gyorsítótár
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE/Editor specifikus fájlok
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Egyéb
+*.local
