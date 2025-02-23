@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import BasketList from "./basketlist.jsx";
 import Order from "./order.jsx";
-import axios from "axios";
+import apiClient from '../../api/axios';
 
 //Basket oldal a basket listázásához és a megredenléshez
 const Basket = ({ handleRemoveFromCart, handleRemoveAllFromCart }) => {
@@ -17,7 +17,7 @@ const Basket = ({ handleRemoveFromCart, handleRemoveAllFromCart }) => {
   const fetchBasketInfo = async () => {
     const basketData = JSON.parse(Cookies.get("basket"));
     try {
-      const response = await axios.post("/api/get-basketInfo", {
+      const response = await apiClient.post("/api/get-basketInfo", {
         inbasket: basketData,
       });
 

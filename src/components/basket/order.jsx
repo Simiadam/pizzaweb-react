@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import apiClient from '../../api/axios';
 import Cookies from "js-cookie";
 
 //Megrendelés komponens
@@ -26,7 +26,7 @@ const Order = ({ handleRemoveAllFromCart }) => {
     e.preventDefault();
     const basketData = JSON.parse(Cookies.get("basket"));
     try {
-      const response = await axios.post("/api/post-sendOrder", {
+      const response = await apiClient.post("/api/post-sendOrder", {
         name: formData.name,
         tel: formData.tel,
         address: formData.address,

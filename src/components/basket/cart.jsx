@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-import axios from "axios";
+import apiClient from '../../api/axios';
 
 //Jobb fenti kosár infó component
 const Cart = ({ basket }) => {
@@ -14,7 +14,7 @@ const Cart = ({ basket }) => {
   const fetchBasketInfo = async () => {
     const basketData = JSON.parse(Cookies.get("basket"));
     try {
-      const response = await axios.post("/api/get-basketInfo", {
+      const response = await apiClient.post("/api/get-basketInfo", {
         inbasket: basketData,
       });
 
@@ -36,11 +36,9 @@ const Cart = ({ basket }) => {
   };
 
   return (
-    <div className="d-flex align-items-center p-2 rounded">
-      <div>
-        Kosár {cartInfo.totalItems} <i className="bi bi-basket"></i>
-        {cartInfo.totalPrice} Ft
-      </div>
+    <div className="cart-container">
+      <span className="cart-price">{cartInfo.totalPrice} Ft</span>
+      <span className="cart-items">{cartInfo.totalItems}</span>
     </div>
   );
 };

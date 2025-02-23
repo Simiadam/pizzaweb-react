@@ -5,8 +5,8 @@ import Cart from "../basket/cart";
 const Header = ({ basket }) => {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div className="container-fluid">
+      <nav className="navbar container-fluid navbar-expand-lg bg-body-tertiary fixed-top">
+        <div className="container">
           <Link className="navbar-brand" to="/">
             <img
               className="pizzaweb-logoimg"

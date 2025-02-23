@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PizzaList from "./pizzalist";
 import PizzaFilter from "./pizzafilter";
 import PizzaPage from "./pizzapage";
-import axios from "axios";
+import apiClient from '../../api/axios';
 
 const Pizza = ({ handleAddToCart }) => {
   const [pizzas, setPizzas] = useState([]);
@@ -17,6 +17,7 @@ const Pizza = ({ handleAddToCart }) => {
 
   //Pizza lista lekérése oldal betöltésénél
   useEffect(() => {
+    console.log(import.meta.env.VITE_API_URL); // temp
     loadPizzas();
   }, [filters, currentPage]);
 
@@ -29,7 +30,7 @@ const Pizza = ({ handleAddToCart }) => {
         perpage: filters.perpage || null,
         page: currentPage || 1,
       };
-      const response = await axios.post("/api/get-pizzas", params);
+      const response = await apiClient.post("/api/get-pizzas", params);
       const pizzaData = response.data;
 
       setTotalPages(pizzaData.data.totalpages);
@@ -52,7 +53,7 @@ const Pizza = ({ handleAddToCart }) => {
   };
 
   return (
-    <main>
+    <main className="container">
       <h1>Pizzák</h1>
       <PizzaFilter onSearch={handleSearch} onSort={handleSort} />
       <PizzaList pizzas={pizzas} handleAddToCartBasket={handleAddToCart} />

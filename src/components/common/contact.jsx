@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <main>
+    <main className="container">
       <h1>Kapcsolat</h1>
       <div className="row">
         <div className="col-md-6 mb-4">
