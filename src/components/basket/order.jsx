@@ -56,8 +56,8 @@ const Order = ({ handleRemoveAllFromCart }) => {
 
   return (
     <div className="order-form">
-      <h2>Rendelés</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className="page-subtitle">Rendelés</h2>
+      <form onSubmit={handleSubmit} className="page-text">
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Név

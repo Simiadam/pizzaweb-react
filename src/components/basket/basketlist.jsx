@@ -4,7 +4,7 @@ import React from "react";
 const BasketList = ({ pizzas, handleDelete }) => {
   return (
     <div className="row">
-      <h2>Kosár</h2>
+      <h2 className="page-subtitle">Kosár</h2>
       {Array.isArray(pizzas) && pizzas.length > 0 ? (
         pizzas.map((pizza) => (
           <div className="col-md-12 mb-4" key={pizza.id}>

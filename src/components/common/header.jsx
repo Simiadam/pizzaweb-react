@@ -39,6 +39,11 @@ const Header = ({ basket }) => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/basket">
+                  Kosár
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Kapcsolat
                 </Link>

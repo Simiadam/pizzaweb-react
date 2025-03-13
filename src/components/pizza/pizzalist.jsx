@@ -44,6 +44,20 @@ const PizzaList = ({ pizzas, handleAddToCartBasket }) => {
     }
   };
 
+    // Mennyiség növelése
+    const increaseQuantity = (pizzaId) => {
+      const currentQuantity = quantities[pizzaId] || 1;
+      handleQuantityChange(pizzaId, currentQuantity + 1);
+    };
+  
+    // Mennyiség csökkentése
+    const decreaseQuantity = (pizzaId) => {
+      const currentQuantity = quantities[pizzaId] || 1;
+      if (currentQuantity > 1) {
+        handleQuantityChange(pizzaId, currentQuantity - 1);
+      }
+    };
+
   return (
     <div className="row">
       {Array.isArray(pizzas) && pizzas.length > 0 ? (
@@ -76,18 +90,33 @@ const PizzaList = ({ pizzas, handleAddToCartBasket }) => {
                   </select>
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor={`quantity-${pizza.id}`}>Mennyiség:</label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    id={`quantity-${pizza.id}`}
-                    min="1"
-                    value={quantities[pizza.id] || 1}
-                    onChange={(e) =>
-                      handleQuantityChange(pizza.id, e.target.value)
-                    }
-                  />
+                <div className="quantity-control">
+                  <label htmlFor={`quantity-${pizza.id}`} className="quantity-label">
+                    Mennyiség:
+                  </label>
+                  <div className="quantity-input-group">
+                    <button
+                      className="quantity-button"
+                      type="button"
+                      onClick={() => decreaseQuantity(pizza.id)}
+                    >
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      className="quantity-input"
+                      id={`quantity-${pizza.id}`}
+                      value={quantities[pizza.id] || 1}
+                      readOnly
+                    />
+                    <button
+                      className="quantity-button"
+                      type="button"
+                      onClick={() => increaseQuantity(pizza.id)}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
 
                 <button

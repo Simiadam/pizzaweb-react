@@ -4,7 +4,7 @@
 
 body {
   padding-top: 66px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #root {
@@ -24,8 +24,10 @@ footer {
   padding: 1rem 0;
 }
 
-h1, h2, h3 {
-  font-family: 'Roboto Condensed', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 h1 {
@@ -38,8 +40,9 @@ p {
   line-height: 1.8;
 }
 
-button, a {
-  font-family: 'Oswald', sans-serif;
+button,
+a {
+  font-family: "Oswald", sans-serif;
 }
 
 /*---------------*/
@@ -47,13 +50,13 @@ button, a {
 /*---------------*/
 
 .navbar-brand {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .nav-link {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   font-weight: 650;
   margin: 0 0.5rem;
@@ -81,24 +84,24 @@ nav a {
 /*Home*/
 /*---------------*/
 
-.banner-image{
+.banner-image {
   height: 70vh;
   object-fit: cover;
 }
 
-.banner-btn{
+.banner-btn {
   top: 85%;
 }
 
-#banner-text{
+#banner-text {
   top: 40%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3rem;
   font-weight: 700;
 }
 
 .home-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   margin: 1.2rem 0 1rem 0;
@@ -106,7 +109,7 @@ nav a {
 }
 
 .home-subtitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -114,7 +117,7 @@ nav a {
 }
 
 .home-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   line-height: 1.8;
   color: #3f3f3f;
@@ -134,7 +137,7 @@ nav a {
 }
 
 .cart-price {
-  font-family: 'Cubano', sans-serif;
+  font-family: "Cubano", sans-serif;
   font-weight: bold;
   font-size: 1.3rem;
   margin-right: 0.5rem;
@@ -170,14 +173,14 @@ nav a {
 }
 
 .card-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #333;
 }
 
 .card-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.1rem;
   color: #555;
 }
@@ -194,7 +197,7 @@ nav a {
 
 .form-group label {
   margin-right: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   color: #333;
 }
@@ -208,36 +211,111 @@ nav a {
 /*Button*/
 /*---------------*/
 
-.btn-dark {
+.btn {
   width: 100%;
   border-radius: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   padding: 0.5rem 1rem;
-  background-color: #333;
   border: none;
-  transition: background-color 0.2s;
+}
+
+.btn-dark {
+  background-color: #333;
 }
 
 .btn-dark:hover {
   background-color: #555;
 }
 
+/* PizzaList mennyiség */
+.quantity-control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.quantity-label {
+  margin-right: 10px;
+}
+
+.quantity-input-group {
+  display: flex;
+  width: 100%;
+}
+
+.quantity-button {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  padding: 5px 10px;
+  width: 35%;
+  color:#3f3f3f;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.quantity-button:hover {
+  background-color: #e9ecef;
+}
+
+.quantity-input {
+  width: 30%;
+  text-align: center;
+  border: 0px solid #ced4da;
+  color:#333;
+  background-color: white;
+  padding: 5px;
+  font-size: 16px;
+}
+
 /*---------------*/
 /*Pizzas*/
 /*---------------*/
 
-.pizzas-header {
+.page-header {
   background-color: black;
   color: white;
-  padding: 2rem 0;
+  font-size: 26px;
+  font-family: 'Comic Sans MS', cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 0.5rem 0;
   text-align: center;
   width: 100%;
 }
 
-.pizzas-header h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
+.search-filter > .form-select {
+  width: 30%;
+}
+
+.btn-continue {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-continue:hover {
+  background-color: #2dbb4e;
+  color: white;
+}
+
+.btn-cart {
+  background-color: #333;
+  color: white;
+}
+
+.page-control .btn {
+  width: auto;
+}
+
+.page-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0;
+  color: #333;
+}
+
+.page-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  color: #555;
 }

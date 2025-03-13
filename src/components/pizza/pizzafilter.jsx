@@ -25,14 +25,7 @@ const PizzaFilter = ({ onSearch, onSort }) => {
   };
 
   return (
-    <div className="d-flex justify-content-between align-items-center mb-4">
-      <input
-        className="form-control"
-        type="text"
-        placeholder="Keresés..."
-        value={search}
-        onChange={handleSearch}
-      />
+    <div className="d-flex justify-content-between align-items-center mb-3 mt-3 search-filter gap-3">
       <select
         className="form-select"
         name="sortBy"
@@ -52,6 +45,13 @@ const PizzaFilter = ({ onSearch, onSort }) => {
         <option value="asc">Növekvő</option>
         <option value="desc">Csökkenő</option>
       </select>
+      <input
+        className="form-control"
+        type="text"
+        placeholder="Keresés..."
+        value={search}
+        onChange={handleSearch}
+      />
     </div>
   );
 };

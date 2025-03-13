@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import BasketList from "./basketlist.jsx";
 import Order from "./order.jsx";
-import apiClient from '../../api/axios';
+import apiClient from "../../api/axios";
 
 //Basket oldal a basket listázásához és a megredenléshez
 const Basket = ({ handleRemoveFromCart, handleRemoveAllFromCart }) => {
@@ -50,14 +50,18 @@ const Basket = ({ handleRemoveFromCart, handleRemoveAllFromCart }) => {
 
   return (
     <main>
-      <div className="row">
-        <h1>Házhozszállítás</h1>
-        <div className="col-md-6">
-          <BasketList pizzas={pizzas} handleDelete={handleDelete} />
-          <h3>Összesen: {cartInfo.totalPrice} Ft</h3>
-        </div>
-        <div className="col-md-6">
-          <Order handleRemoveAllFromCart={handleRemoveAllFromCart} />
+      <div className="container-fluid p-0">
+        <h2 className="page-header">Házhozszállítás</h2>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <BasketList pizzas={pizzas} handleDelete={handleDelete} />
+            <h3 className="page-subtitle">Összesen: {cartInfo.totalPrice} Ft</h3>
+          </div>
+          <div className="col-md-6">
+            <Order handleRemoveAllFromCart={handleRemoveAllFromCart} />
+          </div>
         </div>
       </div>
     </main>

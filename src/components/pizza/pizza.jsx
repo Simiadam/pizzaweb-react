@@ -53,8 +53,11 @@ const Pizza = ({ handleAddToCart }) => {
   };
 
   return (
-    <main className="container">
-      <h1>Pizzák</h1>
+    <main>
+      <div className="container-fluid p-0">
+        <h2 className="page-header">Pizzák</h2>
+      </div>
+      <div className="container">
       <PizzaFilter onSearch={handleSearch} onSort={handleSort} />
       <PizzaList pizzas={pizzas} handleAddToCartBasket={handleAddToCart} />
       <PizzaPage
@@ -62,6 +65,7 @@ const Pizza = ({ handleAddToCart }) => {
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
+      </div>
     </main>
   );
 };

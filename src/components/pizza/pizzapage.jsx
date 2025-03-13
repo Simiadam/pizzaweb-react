@@ -10,9 +10,9 @@ const PizzaPage = ({ currentPage, onPageChange, totalPages }) => {
   };
 
   return (
-    <div className="d-flex justify-content-between align-items-center mb-3">
+    <div className="d-flex justify-content-between align-items-center mb-3 page-control">
       <button
-        className="btn btn-secondary d-flex align-items-center"
+        className="btn btn-dark d-flex align-items-center"
         onClick={handlePrevious}
         disabled={currentPage == 1}
       >
@@ -22,7 +22,7 @@ const PizzaPage = ({ currentPage, onPageChange, totalPages }) => {
         {currentPage} / {totalPages}
       </span>
       <button
-        className="btn btn-secondary d-flex align-items-center"
+        className="btn btn-dark d-flex align-items-center btn-right"
         onClick={handleNext}
         disabled={currentPage == totalPages}
       >

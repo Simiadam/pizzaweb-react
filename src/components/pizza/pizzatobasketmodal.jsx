@@ -16,7 +16,7 @@ const PizzaToBasketModal = () => {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="pizzaToBasketLabel">
-              Sikeres kosárba helyezés
+              Sikeresen hozzáadva
             </h1>
             <button
               type="button"
@@ -26,23 +26,25 @@ const PizzaToBasketModal = () => {
             ></button>
           </div>
           <div className="modal-body">
-            <p>Szeretnéd folytatni a vásárlást?</p>
+            <div className="d-flex justify-content-center align-items-center">
+              <p className="ms-2">Sikeresen hozzáadva a kosárhoz</p>
+            </div>
           </div>
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-continue"
               data-bs-dismiss="modal"
-              onClick={() => navigate("/basket")}
             >
-              Megrendelés
+              Tovább vásárolok
             </button>
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-dark btn-cart"
               data-bs-dismiss="modal"
+              onClick={() => navigate("/basket")}
             >
-              Vásárlás folytatása
+              Kosárhoz
             </button>
           </div>
         </div>

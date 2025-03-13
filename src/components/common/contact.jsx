@@ -33,12 +33,15 @@ const Contact = () => {
   };
 
   return (
-    <main className="container">
-      <h1>Kapcsolat</h1>
+    <main>
+      <div className="container-fluid p-0">
+        <h2 className="page-header">Kapcsolat</h2>
+      </div>
+      <div className="container">
       <div className="row">
         <div className="col-md-6 mb-4">
-          <h3>Üzenetküldő űrlap</h3>
-          <form onSubmit={handleSubmit}>
+          <h3 className="page-subtitle">Üzenetküldő űrlap</h3>
+          <form onSubmit={handleSubmit} className="page-text">
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email cím
@@ -74,7 +77,7 @@ const Contact = () => {
             </button>
             {submissionStatus && <div className="mt-3">{submissionStatus}</div>}
           </form>
-          <div className="mt-4">
+          <div className="mt-4 page-text">
             <h3>Elérhetőségi adatok</h3>
             <ul className="list-unstyled">
               <li>
@@ -90,7 +93,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="col-md-6 mb-4">
-          <h3>Térkép</h3>
+          <h3 className="page-subtitle">Térkép</h3>
           <div className="embed-responsive">
             <iframe
               className="gmap_iframe"
@@ -104,6 +107,7 @@ const Contact = () => {
             ></iframe>
           </div>
         </div>
+      </div>
       </div>
     </main>
   );
